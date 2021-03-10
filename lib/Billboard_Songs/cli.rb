@@ -18,6 +18,11 @@ class BillboardSongs::CLI
         puts @songs[choice]
     end
 
+    def this_is_a_test
+        puts "testing"
+    end
+    
+
 
 
   
