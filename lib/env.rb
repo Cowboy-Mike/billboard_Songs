@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-require_relative "Billboard_Songs/version"
-require_relative "Billboard_Songs/CLI"
+require_relative "version.rb"
+require_relative "cli"
 require "pry"
 
 module BillboardSongs
