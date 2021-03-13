@@ -11,18 +11,41 @@ class BillboardSongs::CLI
     end
 
     def user_choice
-        puts "Would you like to search by ranking or browse the list?"
-        puts "Enter 1 to search by rank or 2 to view list"
-        choice = gets.chomp.to_i-1
+        #asks user if they want to search by rank, artist, or view the list
+        puts "Would you like to search by:\n 1) Rank\n 2) Artist\n 3) List"
+        choice = gets.chomp.to_i
         if choice == 1
-            puts @songs[choice]
+            search_by_rank
         elsif choice == 2
-            puts @songs
+            search_by_artist
+        elsif choice == 3
+            view_list
         else
-            puts "Sorry I didn't understand your selection"
+            puts "Sorry I didn't understand"
         end
-        
+    
     end
+
+    def search_by_rank
+        puts "What rank do you want to check?"
+        rank = gets.chomp.to_i
+        get_song_list
+        puts @songs[rank-1]
+        #returns song info for rank chosen
+    end
+
+    def search_by_artist
+        puts "search by artist"
+        #asks user for artist
+        #returns song information
+    end
+
+    def view_list
+        get_song_list
+        puts @songs
+        #returns Billboard top 100
+    end
+
 
     
 
