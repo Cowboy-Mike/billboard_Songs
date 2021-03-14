@@ -2,6 +2,10 @@
 
 require_relative "version"
 require_relative "cli"
+require_relative "songs"
+require_relative "scraper"
+require "nokogiri"
+require "open-uri"
 require "pry"
 
 module BillboardSongs

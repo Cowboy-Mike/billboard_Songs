@@ -3,11 +3,14 @@ class BillboardSongs::CLI
         puts "Let's see what songs are top of the chart this week!"
         #get song list      
         #offer choice - type specific song or show list
+        BillboardSongs::Scraper.get_page
+        get_song_list
         user_choice
+
     end
 
     def get_song_list
-        @songs = ["song 1", "song 2", "Song 3"]
+        @songs = BillboardSongs::Song.all
     end
 
     def user_choice
@@ -41,8 +44,9 @@ class BillboardSongs::CLI
     end
 
     def view_list
-        get_song_list
-        puts @songs
+
+        BillboardSongs::Song.all
+        
         #returns Billboard top 100
     end
 

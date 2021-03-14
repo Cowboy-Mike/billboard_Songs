@@ -1,4 +1,4 @@
-class Song
+class BillboardSongs::Song
     attr_accessor :title, :artist, :last_week, :peak, :weeks_on_chart
 
     @@all = []
